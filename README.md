@@ -1,6 +1,4 @@
-## Built With
-
-This project was built using these technologies.
+## This project was built using these technologies.
 
 - React.js
 - Node.js
@@ -16,3 +14,5 @@ This project was built using these technologies.
 **🎨 Styled with React-Bootstrap and Css with easy to customize colors**
 
 **📱 Fully Responsive**
+
+
