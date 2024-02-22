@@ -1,0 +1,25 @@
+# The Docker image that will be used to build your app
+stages:
+  - buildFront
+  - pages
+buildFront:
+  image: node:lts
+  artifacts:
+    paths:
+      - public
+# Functions that should be executed before the build script is run
+  script:
+    - npm install
+    - npm run build
+pages:
+  dependencies:
+    - buildFront
+    artifacts:
+      # The path to the public folder that will be used to serve your pages
+      paths:
+      # The folder that contains the files to be exposed at the Page URL
+        - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
